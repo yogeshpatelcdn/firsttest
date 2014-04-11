@@ -1,0 +1,35 @@
+March 3rd 2014, 3:07:08 PM : =========================================================
+March 3rd 2014, 3:07:08 PM : AppName Server 1 Application.ERROR | Newline.ENABLED
+March 3rd 2014, 3:07:08 PM : March 3 2014 3:07 PM
+March 3rd 2014, 3:07:08 PM : =========================================================
+March 3rd 2014, 3:07:23 PM : =========================================================
+March 3rd 2014, 3:07:23 PM : AppName Server 1 Application.ERROR | Newline.ENABLED
+March 3rd 2014, 3:07:23 PM : March 3 2014 3:07 PM
+March 3rd 2014, 3:07:23 PM : =========================================================
+March 3rd 2014, 3:07:26 PM : ReferenceError: fdf is not defined
+                                 at spinonce (C:\dream\app\controllers\index.js:8:1)
+                                 at callbacks (C:\dream\node_modules\express\lib\router\index.js:164:37)
+                                 at param (C:\dream\node_modules\express\lib\router\index.js:138:11)
+                                 at pass (C:\dream\node_modules\express\lib\router\index.js:145:5)
+                                 at Router._dispatch (C:\dream\node_modules\express\lib\router\index.js:173:5)
+                                 at Object.router (C:\dream\node_modules\express\lib\router\index.js:33:10)
+                                 at next (C:\dream\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+                                 at Object.handle (C:\dream\app\web-http.js:27:9)
+                                 at next (C:\dream\node_modules\express\node_modules\connect\lib\proto.js:193:15)
+                                 at Object.session [as handle] (C:\dream\node_modules\express\node_modules\connect\lib\middleware\session.js:219:61)
+March 3rd 2014, 3:08:02 PM : =========================================================
+March 3rd 2014, 3:08:02 PM : AppName Server 1 Application.ERROR | Newline.ENABLED
+March 3rd 2014, 3:08:02 PM : March 3 2014 3:08 PM
+March 3rd 2014, 3:08:02 PM : =========================================================
+March 3rd 2014, 3:10:45 PM : =========================================================
+March 3rd 2014, 3:10:45 PM : AppName Server 1 Application.ERROR | Newline.ENABLED
+March 3rd 2014, 3:10:45 PM : March 3 2014 3:10 PM
+March 3rd 2014, 3:10:45 PM : =========================================================
+March 3rd 2014, 3:11:52 PM : =========================================================
+March 3rd 2014, 3:11:52 PM : AppName Server 1 Application.ERROR | Newline.ENABLED
+March 3rd 2014, 3:11:52 PM : March 3 2014 3:11 PM
+March 3rd 2014, 3:11:52 PM : =========================================================
+March 3rd 2014, 6:59:56 PM : =========================================================
+March 3rd 2014, 6:59:56 PM : AppName Server 1 Application.ERROR | Newline.ENABLED
+March 3rd 2014, 6:59:56 PM : March 3 2014 6:59 PM
+March 3rd 2014, 6:59:56 PM : =========================================================
