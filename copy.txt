@@ -1,0 +1,59 @@
+/*@ECHO OFF
+REM http://stackoverflow.com/questions/7170683/copy-all-files-and-folders-from-one-drive-to-another-drive-using-dos-command-pr
+SETLOCAL EnableDelayedExpansion
+set destinationpath=%1
+echo %destinationpath%
+if exist G:\Installer.exe  (  call :findfolderG
+ ) else ( call :findfolderF )
+ 
+EXIT
+ 
+   
+:cp
+if not exist %destinationpath%%Name%  (
+
+echo newar %destinationpath%%Name%
+ mkdir %destinationpath%%Name%
+
+)
+  XCOPY %1 %destinationpath%%Name% /S/h/c/k/e/r/y
+
+EXIT /B 0
+
+:procname
+set filename=%1
+For %%A in ("%filename%") do (
+     Set Name=%%~nxA
+)
+echo %Name%
+EXIT /B 0
+
+:findfolderG
+
+for /D %%G in (G:\LearnFatafat_*) do  (
+           
+if /I "%%G" EQU "" (
+    echo learnF is null
+) ELSE (
+  echo found-  %%G
+  call :procname %%G 
+  call :cp "%%G"
+ )
+)
+EXIT /B 0
+
+:findfolderF
+
+for /D %%G in (F:\LearnFatafat_*) do  (
+           
+if /I "%%G" EQU "" (
+    echo learnF is null
+) ELSE (
+  echo found-  %%G
+  call :procname %%G 
+  call :cp "%%G"
+ )
+)
+EXIT /B 0
+
+*/
