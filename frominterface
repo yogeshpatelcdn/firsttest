@@ -1,0 +1,89 @@
+Test
+
+'w
+qs
+'q
+s;
+q;s
+q;s
+;q
+;q
+
+
+q
+s;
+q
+
+
+    QCPBars *nuclear = new QCPBars(ui->customPlot->xAxis,ui->customPlot->yAxis);
+    QCPBars *fossil = new QCPBars(ui->customPlot->xAxis, ui->customPlot->yAxis);
+
+
+   ui-> customPlot->addPlottable(nuclear);
+    ui->customPlot->addPlottable(fossil);
+    // set names and colors:
+    QPen pen;
+    pen.setWidthF(2.2);
+    fossil->setName("Fossil fuels");
+    pen.setColor(QColor(255, 0, 0));
+    fossil->setPen(pen);
+    fossil->setBrush(QColor(255, 255, 255, 255));
+    nuclear->setName("Nuclear");
+    pen.setColor(QColor(1, 92, 191));
+
+    fossil->moveAbove(nuclear);
+
+    // prepare x axis with country labels:
+    QVector<double> ticks,ticks1,ticks2;
+    QVector<QString> labels;
+    ticks << 1 << 2 << 3  << 6 << 7<<8;
+    labels << "USA" << "Japan" << "Germany" << "France" << "UK" << "Italy" << "India"<<"hhh";
+   ui-> customPlot->xAxis->setAutoTicks(false);
+   ui-> customPlot->xAxis->setAutoTickLabels(false);
+    ui->customPlot->xAxis->setTickVector(ticks);
+    ui->customPlot->xAxis->setTickVectorLabels(labels);
+    ui->customPlot->xAxis->setTickLabelRotation(0);
+    ui->customPlot->xAxis->setSubTickCount(0);
+ //  ui-> customPlot->xAxis->setTickLength(0, 2);
+   ui-> customPlot->xAxis->grid()->setVisible(true);
+   ui-> customPlot->xAxis->setRange(0, 9);
+   QPen xPen1;
+    xPen1.setWidthF(0);
+   xPen1.setBrush(QColor(255,255,255));
+   ui->customPlot->xAxis->setTickPen(xPen1);
+
+   QPen xPen;
+    xPen.setWidthF(10.2);
+   xPen.setBrush(QColor(0,255,0));
+
+   nuclear->setPen(xPen);
+   ui->customPlot->yAxis->setVisible(false);
+
+    // prepare y axis:
+    ui->customPlot->yAxis->setRange(0, 21);
+   // ui->customPlot->yAxis->setPadding(5); // a bit more space to the left border
+   // ui->customPlot->yAxis->setLabel("Power Consumption in\nKilowatts per Capita (2007)");
+   // ui->customPlot->yAxis->grid()->setSubGridVisible(false);
+    QPen gridPen;
+    gridPen.setStyle(Qt::SolidLine);
+    gridPen.setColor(QColor(0, 0, 0, 25));
+  //  ui->customPlot->yAxis->grid()->setPen(gridPen);
+    gridPen.setStyle(Qt::DotLine);
+    //ui->customPlot->yAxis->grid()->setSubGridPen(gridPen);
+
+    // Add data:
+    QVector<double> fossilData, nuclearData, regenData;
+    fossilData  << 1 << 2 << 3 << 4 <<10 << 0.90*4.2 << 0.67*11.2<<2;
+    nuclearData <<0 << 0<<0<<0<<0<<0<<0;
+   // regenData   << 0.06*10.5 << 0.05*5.5 << 0.04*5.5 << 0.06*5.8 << 0.02*5.2 << 0.07*4.2 << 0.25*11.2;
+    fossil->setData(ticks, fossilData);
+
+     ticks1 << 1.5 << 2.5 ;
+   nuclear->addData(ticks1, nuclearData);
+
+   regenData <<0<<0<<0<<0<<0<<0<<0<<0<<0;
+    ticks2 << 3.5<<4<<4.5<<5<<5.5<<6<<6.5<<7<<7.5 ;
+   nuclear->addData(ticks2, regenData);
+   // regen->setData(ticks, regenData);
+
+   ui->customPlot->xAxis->setVisible(false);
