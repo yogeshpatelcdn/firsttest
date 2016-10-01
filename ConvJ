@@ -1,0 +1,72 @@
+package com.example.yogeshpatel.myapplication2;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+
+
+public class MainActivity extends Activity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+     //   String str =  hexStringToByteArray("75862").toString();
+        Log.d("haha", "s::" + hexStringToByteArray("0x3dbc64"));
+       // byte[] bytes = str.decodeHex("c000060000").toByteArray();
+        Log.d("haha222", "s::" + toHexString(hexStringToByteArray("0x3dbc64")));
+
+        //   String str =  hexStringToByteArray("75862").toString();
+        Log.d("haha", "PageNo::"+ hexStringToByteArray("0x80"));
+        // byte[] bytes = str.decodeHex("c000060000").toByteArray();
+        Log.d("haha222", "PageNo::" + toHexString(hexStringToByteArray("0x80")));
+
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.action_settings) {
+            return true;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+    public static byte[] hexStringToByteArray(String s) {
+        int len = s.length();
+        byte[] data = new byte[len / 2];
+        for (int i = 0; i < len; i += 2) {
+            data[i / 2] = (byte) ((Character.digit(s.charAt(i), 16) << 4)
+                    + Character.digit(s.charAt(i+1), 16));
+        }
+        return data;
+    }
+    public static String toHexString(byte[] bytes) {
+        StringBuilder hexString = new StringBuilder();
+
+        for (int i = 0; i < bytes.length; i++) {
+            String hex = Integer.toHexString(0xFF & bytes[i]);
+            if (hex.length() == 1) {
+                hexString.append('0');
+            }
+            hexString.append(hex);
+        }
+
+        return hexString.toString();
+    }
+}
